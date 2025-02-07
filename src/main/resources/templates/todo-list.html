@@ -13,10 +13,15 @@
         <li th:each="todo : ${todolist}">
             <span th:text="${todo.title}"></span>
             <span th:if="${todo.completed}"> (Done)</span>
+			<form th:action="@{/todolist/toggle}" method="post" style="display:inline;">
+				<input type="hidden" name="id" th:value="${todo.id}" />
+				<button type="submit" th:text="${todo.completed} ? '未完了' : '完了'"></button>
+			</form>
 			<form th:action="@{/todolist/delete}" method="post" style="display:inline;">
 				<input type="hidden" name="id" th:value="${todo.id}" />
 				<button type="submit">削除</button>
 			</form>
+			
         </li>
     </ul>
 </body>

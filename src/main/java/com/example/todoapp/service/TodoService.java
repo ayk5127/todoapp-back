@@ -25,5 +25,14 @@ public class TodoService {
     public void deleteTodo(long id) {
     	todolist.removeIf(todo -> todo.getId() == id);
     }
+    
+    public void toggleTodo(long id) {
+    	for (Todo todo : todolist) {
+    		if (todo.getId() == id) {
+    			todo.setCompleted(!todo.getCompleted());
+    			break;
+    		}
+    	}
+    }
 	
 }

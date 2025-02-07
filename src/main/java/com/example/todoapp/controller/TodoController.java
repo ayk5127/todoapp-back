@@ -35,4 +35,10 @@ public class TodoController {
     	todoService.deleteTodo(id);
     	return "redirect:/todolist";
     }
+    
+    @PostMapping("/toggle")
+    public String toggleTodo(@RequestParam long id) {
+    	todoService.toggleTodo(id);
+    	return "redirect:/todolist";
+    }
 }
