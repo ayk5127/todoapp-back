@@ -21,5 +21,9 @@ public class TodoService {
         Todo newTodo = new Todo(idGenerator.getAndIncrement(), title, false);
         todolist.add(newTodo);
     }
+    
+    public void deleteTodo(long id) {
+    	todolist.removeIf(todo -> todo.getId() == id);
+    }
 	
 }
