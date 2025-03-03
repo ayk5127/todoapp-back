@@ -17,16 +17,16 @@ public class TodoService {
         return todolist;
     }
 
-    public void addTodo(String title) {
+    public void addTodo(final String title) {
         Todo newTodo = new Todo(idGenerator.getAndIncrement(), title, false);
         todolist.add(newTodo);
     }
     
-    public void deleteTodo(long id) {
+    public void deleteTodo(final long id) {
     	todolist.removeIf(todo -> todo.getId() == id);
     }
     
-    public void toggleTodo(long id) {
+    public void toggleTodo(final long id) {
     	for (Todo todo : todolist) {
     		if (todo.getId() == id) {
     			todo.setCompleted(!todo.getCompleted());

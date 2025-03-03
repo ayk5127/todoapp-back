@@ -14,30 +14,30 @@ import com.example.todoapp.service.TodoService;
 public class TodoController {
 	private final TodoService todoService;
 
-    public TodoController(TodoService todoService) {
+    public TodoController(final TodoService todoService) {
         this.todoService = todoService;
     }
 
     @GetMapping
-    public String getTodoList(Model model) {
+    public String getTodoList(final Model model) {
         model.addAttribute("todolist", todoService.getAllTodos());
         return "todo-list";
     }
 
     @PostMapping("/add")
-    public String addTodo(@RequestParam String title) {
+    public String addTodo(@RequestParam final String title) {
         todoService.addTodo(title);
         return "redirect:/todolist";
     }
     
     @PostMapping("/delete")
-    public String deleteTodo(@RequestParam long id) {
+    public String deleteTodo(@RequestParam final long id) {
     	todoService.deleteTodo(id);
     	return "redirect:/todolist";
     }
     
     @PostMapping("/toggle")
-    public String toggleTodo(@RequestParam long id) {
+    public String toggleTodo(@RequestParam final long id) {
     	todoService.toggleTodo(id);
     	return "redirect:/todolist";
     }

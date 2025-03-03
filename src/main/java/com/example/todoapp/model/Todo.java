@@ -5,7 +5,7 @@ public class Todo {
     private String title;
     private boolean completed;
 
-    public Todo(long id, String title, boolean completed) {
+    public Todo(final long id, final String title, final boolean completed) {
         this.id = id;
         this.title = title;
         this.completed = completed;
@@ -15,7 +15,7 @@ public class Todo {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 
@@ -23,7 +23,7 @@ public class Todo {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(final String title) {
         this.title = title;
     }
 
@@ -31,7 +31,7 @@ public class Todo {
         return completed;
     }
 
-    public void setCompleted(boolean completed) {
+    public void setCompleted(final boolean completed) {
         this.completed = completed;
     }
 }
